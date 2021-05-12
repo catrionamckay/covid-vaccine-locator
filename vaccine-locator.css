@@ -1,0 +1,10 @@
+body {
+  background-color: lightgrey;
+  margin: 0;
+}
+#header{
+  background-color: lightblue;
+  margin: 0px;
+  overflow: hidden;
+  width: 100%;
+}
