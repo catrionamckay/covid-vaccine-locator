@@ -13,7 +13,7 @@ var getStateInfo = function(url){
         var status = xhttp.status;
         var response = xhttp.response;
         if (status === 200) {
-          console.log(response.features[0].properties.id)
+          console.log(searchLocations(response.features, zipCode.value))
         } else {
           alert('error with api request url');
         }
@@ -27,3 +27,15 @@ searchButton.addEventListener("click", function getUserSearch(){
     var searchURL = VS_api_state + stateValue + '.json';
     getStateInfo(searchURL);
 });
+
+
+function searchLocations(locations, zip){
+  var zipLocations = []
+  console.log(locations.length)
+  for(i = 0; i < locations.length; i++){
+    if(locations[i].properties.postal_code == zip){
+      zipLocations.push(locations[i])
+    }
+  }
+  return zipLocations
+}
