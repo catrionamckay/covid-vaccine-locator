@@ -18,6 +18,7 @@ var getStateInfo = function(url){
         } else {
           alert('error with api request url');
         }
+
       };
     xhttp.send();
 };
@@ -27,6 +28,7 @@ searchButton.addEventListener("click", function getUserSearch(){
     var stateValue = stateCode.value;
     var searchURL = VS_api_state + stateValue + '.json';
     getStateInfo(searchURL);
+    getVaccineInfo(stateValue)
 });
 
 
