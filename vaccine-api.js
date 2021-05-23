@@ -13,7 +13,8 @@ var getStateInfo = function(url){
         var status = xhttp.status;
         var response = xhttp.response;
         if (status === 200) {
-          console.log(searchLocations(response.features, zipCode.value))
+          locations = searchLocations(response.features, zipCode.value);
+          addVaccineMarkers(locations)
         } else {
           alert('error with api request url');
         }
