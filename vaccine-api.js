@@ -17,7 +17,6 @@ var getStateInfo = function(url){
         } else {
           alert('error with api request url');
         }
-
       };
     xhttp.send();
 };
@@ -46,7 +45,7 @@ function searchLocations(locations, zip){
 function addCard(provider, address, available, url) {
   if(provider)
   document.getElementById("cards").innerHTML += 
-    "<div class='card mb-2 w-30'>" +
+    "<div class='card mb-2 w-75'>" +
       "<div class='card-body'>" +
         "<h5 class='card-title'>" + provider + "</h5>" +
         "<li><span style='font-weight:bold'>Location: </span>" + address + "</li>" +
