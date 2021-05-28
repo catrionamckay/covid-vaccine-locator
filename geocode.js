@@ -59,4 +59,3 @@ function geocode(e){
     console.log(error);
   });
 }
-

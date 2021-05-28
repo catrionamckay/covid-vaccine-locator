@@ -28,7 +28,7 @@ searchButton.addEventListener("click", function getUserSearch(){
     var stateValue = stateCode.value;
     var searchURL = VS_api_state + stateValue + '.json';
     getStateInfo(searchURL);
-    getVaccineInfo(stateValue)
+    getVaccineInfo(stateValue);
 });
 
 
