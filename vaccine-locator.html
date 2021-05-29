@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <title>test</title>
+  <title>COVID-19 Vaccine Locator</title>
   <style>
     #map{
       height:500px;
@@ -29,12 +29,24 @@
   </div>
   <h2>Map of Available Vaccine Locations</h2>
   <div id="map"></div>
+  <div id="stateInfo">
+    <h1>Vacination rates:</h1>
+    <h2 id="percent">Population Vaccination percentage:</h2>
+    <h2 id="initiated">Vaccinations Initiated:</h2>
+    <h2 id="completed">Vaccinations Completed:</h2>
+    <h1>COVID stats:</h1>
+    <h2 id="new_cases">New Cases:</h2>
+    <h2 id="new_deaths">New Deaths:</h2>
+</div>
 
+  <script src="config.js"></script>
+  <script src="covid-act-now-api.js"></script>
+  <script src="vaccine-api.js"></script>
   <script src="maps.js"></script>
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARv3XGy6cc3LrzKS6ai0YPzp8Jlgnmy3g&callback=initMap">
     </script>
   <script src="geocode.js"></script>
-  <script src="vaccine-api.js"></script>
+
 </body>
 </html>
