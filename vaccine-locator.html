@@ -1,45 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <title>test</title>
-    <style>
-      #map{
-        height:500px;
-        width:50%;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h2 id="text-center">Enter Location: </h2>
-      <form id="location-form">
-        <input type="text" id="location-input" class="form-control form-control-lg">
-        <br>
-        <button type="submit" id="search" class="btn btn-primary btn-block">Submit</button>
-      </form>
-      <div class="card-block" id="formatted-address"></div>
-      <div class="card-block" id="address-components"></div>
-      <div class="card-block" id="geometry"></div>
-    </div>
-    <h2>Map of Available Vaccine Locations</h2>
-    <div class="container">
-      <div class="row">
-        <div id="map" class="col-xs-6"></div>
-        <div id="cards" class="col-xs-6"></div>
-      </div>
-    </div>
 
-    <script src="maps.js"></script>
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARv3XGy6cc3LrzKS6ai0YPzp8Jlgnmy3g&callback=initMap">
-      </script>
-    <script src="geocode.js"></script>
-    <script src="vaccine-api.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <title>COVID-19 Vaccine Locator</title>
+  <style>
+    #map{
+      height:500px;
+      width:50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 id="text-center">Enter Location: </h2>
+    <form id="location-form">
+      <input type="text" id="location-input" class="form-control form-control-lg">
+      <br>
+      <button type="submit" id="seach" class="btn btn-primary btn-block">Submit</button>
+    </form>
+    <div class="card-block" id="formatted-address"></div>
+    <div class="card-block" id="address-components"></div>
+    <div class="card-block" id="geometry"></div>
+  </div>
+  <h2>Map of Available Vaccine Locations</h2>
+  <div class="container">
+    <div class="row">
+      <div id="map" class="col-sm-6"></div>
+      <div id="cards" class="col-sm-6"></div>
+    </div>
+  </div>
+  <div id="stateInfo">
+    <h1>Vacination rates:</h1>
+    <h2 id="percent">Population Vaccination percentage:</h2>
+    <h2 id="initiated">Vaccinations Initiated:</h2>
+    <h2 id="completed">Vaccinations Completed:</h2>
+    <h1>COVID stats:</h1>
+    <h2 id="new_cases">New Cases:</h2>
+    <h2 id="new_deaths">New Deaths:</h2>
+</div>
+
+  <script src="config.js"></script>
+  <script src="card-info.js"></script>
+  <script src="covid-act-now-api.js"></script>
+  <script src="vaccine-api.js"></script>
+  <script src="maps.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARv3XGy6cc3LrzKS6ai0YPzp8Jlgnmy3g&callback=initMap">
+    </script>
+  <script src="geocode.js"></script>
+
+</body>
 </html>
