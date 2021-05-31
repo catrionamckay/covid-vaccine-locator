@@ -18,7 +18,6 @@ var getStateInfo = function(url, lat, long){
     if (status === 200) {
       // cat searchLocations to get the locations in the radius
       locations = searchLocations(response.features, lat, long);
-      console.log(locations)
       loadPlace(lat, long, locations)
     } else {
       // alert if the call doesn't work
@@ -60,12 +59,19 @@ function getUserSearch(state, lat, long){
 function searchLocations(locations, lat, long){
   var radiusLocations = []
   var dist = 0
+  var radius = document.getElementById("search-radius").value
+
+  radius = parseInt(radius)
+
+  if(isNaN(radius)){
+    radius = defaultRadius
+  }
   // loop through each location
   for(i = 0; i < locations.length; i++){
     // get the distance between the search point and the location
     dist = getDistance(lat, long, locations[i].geometry.coordinates[1], locations[i].geometry.coordinates[0])
     // checks if within the distance
-    if(dist <= defaultRadius){
+    if(dist <= radius){
       // adds to array if within distance
       radiusLocations.push(locations[i])
     }

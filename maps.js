@@ -69,6 +69,7 @@ function loadPlace(lat, long, VaccineLocations){
       zoom:10,
       center:{lat:lat,lng:long}
     }
+
   var map = new google.maps.Map(document.getElementById('map'), options);
   
   //call function addLocations for each location passed into the function
@@ -78,25 +79,29 @@ function loadPlace(lat, long, VaccineLocations){
 
   // this function adds a marker for each location
   function addLocations(results){
-    
+
     // this variable contains the coordinates and the content for the infoWindow
     marker_info = {
       coords:{lat:results.geometry.coordinates[1],lng:results.geometry.coordinates[0]},
       content:'<p>' + results.properties.address + '</p><p>' + results.properties.provider + '</p>'
     }
+    
     // create the marker
     marker = new google.maps.Marker({
       position:marker_info.coords,
       map:map
     });
+
     // create the infoWindow to show information about the vaccination location
     infoWindow = new google.maps.InfoWindow({
       content:marker_info.content
     });
+
     // add event listener so that the infoWindow is displayed when the marker is clicked.
     marker.addListener('click', function(){
        infoWindow.open(map, marker);
     });
+
   
   }
 }
