@@ -19,6 +19,8 @@ var getStateInfo = function(url, lat, long){
       // cat searchLocations to get the locations in the radius
       locations = searchLocations(response.features, lat, long);
       loadPlace(lat, long, locations)
+      removeCards();
+      loadCards(locations);
     } else {
       // alert if the call doesn't work
       alert('error with api request url');

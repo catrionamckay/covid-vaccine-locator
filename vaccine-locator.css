@@ -1,10 +1,16 @@
 body {
-  background-color: lightgrey;
+  background-color: #f8f8ff;
   margin: 0;
 }
+
 #header{
   background-color: lightblue;
   margin: 0px;
   overflow: hidden;
   width: 100%;
+}
+
+.scrollable{
+  max-height: 500px;
+  overflow-y: scroll;
 }

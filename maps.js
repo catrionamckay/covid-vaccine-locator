@@ -69,6 +69,12 @@ function loadPlace(lat, long, VaccineLocations){
       zoom:10,
       center:{lat:lat,lng:long}
     }
+  var map = new google.maps.Map(document.getElementById('map'), options);
+  
+  //call function addLocations for each location passed into the function
+  for(var i = 0; i < VaccineLocations.length; i++){
+    addLocations(VaccineLocations[i])
+  }
 
   var map = new google.maps.Map(document.getElementById('map'), options);
   
