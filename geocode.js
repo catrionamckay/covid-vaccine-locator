@@ -58,7 +58,8 @@ function geocode(e){
     
     getUserSearch(state, lat, lng)
     getVaccineInfo(state);
-    loadPlace(lat,lng, VaccineLocations)
+    getUSVaccineInfo();
+    //loadPlace(lat,lng, VaccineLocations)
   })
   .catch(function(error){
     console.log(error);
@@ -72,8 +73,8 @@ function getState(address_components){
   // loop throught the address components to find the component that has the state abbriviation
   for(var i = 0; i < address_components.length; i++){
     if(states.includes(address_components[i].short_name)){
-      console.log('State:')
-      console.log(address_components[i].long_name)
+      //console.log('State:')
+      //console.log(address_components[i].long_name)
       return address_components[i].short_name
     }
 

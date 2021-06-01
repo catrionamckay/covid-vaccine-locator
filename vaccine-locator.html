@@ -21,6 +21,9 @@
     <form id="location-form">
       <input type="text" id="location-input" class="form-control form-control-lg">
       <br>
+      <h2>Enter search radius</h2>
+      <input type="text" id="search-radius" class="form-control form-control-lg">
+      <br>
       <button type="submit" id="seach" class="btn btn-primary btn-block">Submit</button>
     </form>
     <div class="card-block" id="formatted-address"></div>
@@ -30,13 +33,21 @@
   <h2>Map of Available Vaccine Locations</h2>
   <div id="map"></div>
   <div id="stateInfo">
-    <h1>Vacination rates:</h1>
-    <h2 id="percent">Population Vaccination percentage:</h2>
-    <h2 id="initiated">Vaccinations Initiated:</h2>
-    <h2 id="completed">Vaccinations Completed:</h2>
-    <h1>COVID stats:</h1>
-    <h2 id="new_cases">New Cases:</h2>
-    <h2 id="new_deaths">New Deaths:</h2>
+    <h1>State:</h1>
+    <h2>Vacination rates:</h2>
+    <h3 id="percent">Population Vaccination percentage:</h3>
+    <h3 id="initiated">Vaccinations Initiated:</h3>
+    <h3 id="completed">Vaccinations Completed:</h3>
+    <h3 id="new_cases">New Cases:</h3>
+    <h3 id="new_deaths">New Deaths:</h3>
+</div>
+<div id="us-info">
+  <h1>United States: </h1>
+  <h3 id="us-percent">Population Vaccination percentage:</h3>
+    <h3 id="us-initiated">Vaccinations Initiated:</h3>
+    <h3 id="us-completed">Vaccinations Completed:</h3>
+    <h3 id="us-new_cases">New Cases:</h3>
+    <h3 id="us-new_deaths">New Deaths:</h3>
 </div>
 
   <script src="config.js"></script>
