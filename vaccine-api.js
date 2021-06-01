@@ -20,6 +20,7 @@ var getStateInfo = function(url, lat, long){
       locations = searchLocations(response.features, lat, long);
       console.log(locations);
       loadPlace(lat, long, locations);
+      removeCards();
       loadCards(locations);
     } else {
       // alert if the call doesn't work
