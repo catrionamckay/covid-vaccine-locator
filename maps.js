@@ -81,19 +81,19 @@ function loadPlace(lat, long, VaccineLocations){
   function addLocations(results){
 
     // this variable contains the coordinates and the content for the infoWindow
-    marker_info = {
+    var marker_info = {
       coords:{lat:results.geometry.coordinates[1],lng:results.geometry.coordinates[0]},
       content:'<p>' + results.properties.address + '</p><p>' + results.properties.provider + '</p>'
     }
     
     // create the marker
-    marker = new google.maps.Marker({
+    var marker = new google.maps.Marker({
       position:marker_info.coords,
       map:map
     });
 
     // create the infoWindow to show information about the vaccination location
-    infoWindow = new google.maps.InfoWindow({
+    var infoWindow = new google.maps.InfoWindow({
       content:marker_info.content
     });
 
