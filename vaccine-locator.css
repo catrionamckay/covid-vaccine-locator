@@ -14,3 +14,7 @@ body {
   max-height: 500px;
   overflow-y: scroll;
 }
+
+#covid-stats{
+  visibility: hidden;
+}

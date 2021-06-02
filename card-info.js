@@ -14,7 +14,7 @@ function addCards(location, address, available, url) {
   
 function loadCards(VaccineLocations) {
   var available;
-  for(var i = 0; i < VaccineLocations.length; i++){
+  for(var i = (VaccineLocations.length-1); i > 0; i--){
       var prefix = VaccineLocations[i].properties;
       if(prefix.appointments_available === true) {
           available = "<span style='color:green'>Vaccines Available</span>";

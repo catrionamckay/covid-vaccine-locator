@@ -54,10 +54,11 @@ function geocode(e){
 //        document.getElementById('formatted-address').innerHTML = formattedAddressOutput; // testing
 //        document.getElementById('address-components').innerHTML = addressComponentsOutput; // testing
     document.getElementById('geometry').innerHTML = geometryOutput;
-    var state = getState(response.data.results[0].address_components);
-    
-    getUserSearch(state, lat, lng)
-    getVaccineInfo(state);
+    state = getState(response.data.results[0].address_components);
+    document.getElementById("state-name").innerHTML = state[1] + ":"
+    document.getElementById("covid-stats").style.visibility = 'visible';
+    getUserSearch(state[0], lat, lng)
+    getVaccineInfo(state[0]);
     getUSVaccineInfo();
     //loadPlace(lat,lng, VaccineLocations)
   })
@@ -75,7 +76,7 @@ function getState(address_components){
     if(states.includes(address_components[i].short_name)){
       //console.log('State:')
       //console.log(address_components[i].long_name)
-      return address_components[i].short_name
+      return [address_components[i].short_name, address_components[i].long_name]
     }
 
   }

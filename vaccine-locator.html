@@ -19,11 +19,11 @@
 </head>
 <body>
   <div class="container">
-    <h2 id="text-center">Enter Location: </h2>
+    <h2 id="text-center">Enter Address/Zip Code: </h2>
     <form id="location-form">
       <input type="text" id="location-input" class="form-control form-control-lg">
       <br>
-      <h2>Enter search radius</h2>
+      <h2>Enter search radius(miles):</h2>
       <input type="text" id="search-radius" class="form-control form-control-lg">
       <br>
       <button type="submit" id="seach" class="btn btn-primary btn-block">Submit</button>
@@ -39,16 +39,16 @@
       <div id="cards" class="col-sm-6 scrollable"></div>
     </div>
   </div>
-  <div id="stateInfo">
-    <h1>State:</h1>
-    <h2>Vacination rates:</h2>
+  <div class="row" id="covid-stats">
+  <div id="stateInfo" class="col-sm-6">
+    <h1 id="state-name">State:</h1>
     <h3 id="percent">Population Vaccination percentage:</h3>
     <h3 id="initiated">Vaccinations Initiated:</h3>
     <h3 id="completed">Vaccinations Completed:</h3>
     <h3 id="new_cases">New Cases:</h3>
     <h3 id="new_deaths">New Deaths:</h3>
 </div>
-<div id="us-info">
+<div id="us-info" class="col-sm-6">
   <h1>United States: </h1>
   <h3 id="us-percent">Population Vaccination percentage:</h3>
     <h3 id="us-initiated">Vaccinations Initiated:</h3>
@@ -56,7 +56,7 @@
     <h3 id="us-new_cases">New Cases:</h3>
     <h3 id="us-new_deaths">New Deaths:</h3>
 </div>
-
+</div>
   <script src="config.js"></script>
   <script src="card-info.js"></script>
   <script src="covid-act-now-api.js"></script>
