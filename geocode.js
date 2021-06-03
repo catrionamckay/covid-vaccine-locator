@@ -23,6 +23,7 @@ function geocode(e){
 
     // Formatted Address
     var formattedAddress = response.data.results[0].formatted_address;
+    
     var formattedAddressOutput = `
       <ul class="list-group">
         <li class="list-group-item">${formattedAddress}</li>
@@ -52,11 +53,32 @@ function geocode(e){
     // Output to app
 //        document.getElementById('formatted-address').innerHTML = formattedAddressOutput; // testing
 //        document.getElementById('address-components').innerHTML = addressComponentsOutput; // testing
-    document.getElementById('geometry').innerHTML = geometryOutput;
-    loadPlace(lat,lng)
+    //document.getElementById('geometry').innerHTML = geometryOutput;
+    state = getState(response.data.results[0].address_components);
+    document.getElementById("state-name").innerHTML = state[1] + ":"
+    document.getElementById("covid-stats").style.visibility = 'visible';
+    getUserSearch(state[0], lat, lng)
+    getVaccineInfo(state[0]);
+    getUSVaccineInfo();
+    //loadPlace(lat,lng, VaccineLocations)
   })
   .catch(function(error){
     console.log(error);
   });
+}
+
+// this function determines the state based on the geocode information
+function getState(address_components){
+  // array of possible state abriviations
+  var states = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VI', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
+  // loop throught the address components to find the component that has the state abbriviation
+  for(var i = 0; i < address_components.length; i++){
+    if(states.includes(address_components[i].short_name)){
+      //console.log('State:')
+      //console.log(address_components[i].long_name)
+      return [address_components[i].short_name, address_components[i].long_name]
+    }
+
+  }
 }
 
