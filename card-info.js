@@ -11,7 +11,7 @@ function addCards(location, address, available, url) {
       "</div>" +
     "</div>";
 };
-  
+
 function loadCards(VaccineLocations) {
   var available;
   for(var i = (VaccineLocations.length-1); i > 0; i--){
@@ -26,7 +26,7 @@ function loadCards(VaccineLocations) {
           available = "<span style='color:red'>Vaccines Unavailable</span>";
       }
       let location = prefix.provider_brand_name;
-      let address = prefix.address + ' ' + prefix.city + ', ' + 
+      let address = prefix.address + ' ' + prefix.city + ', ' +
                   prefix.state + ' ' + prefix.postal_code;
       let url = prefix.url;
       addCards(location, address, available, url);

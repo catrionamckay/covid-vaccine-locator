@@ -23,7 +23,7 @@ function geocode(e){
 
     // Formatted Address
     var formattedAddress = response.data.results[0].formatted_address;
-    
+
     var formattedAddressOutput = `
       <ul class="list-group">
         <li class="list-group-item">${formattedAddress}</li>
@@ -41,7 +41,7 @@ function geocode(e){
     addressComponentsOutput += '</ul>';
 
     // Geometry
-    var lat = response.data.results[0].geometry.location.lat; 
+    var lat = response.data.results[0].geometry.location.lat;
     var lng = response.data.results[0].geometry.location.lng;
     var geometryOutput = `
       <ul class="list-group">
@@ -53,7 +53,7 @@ function geocode(e){
     // Output to app
 //        document.getElementById('formatted-address').innerHTML = formattedAddressOutput; // testing
 //        document.getElementById('address-components').innerHTML = addressComponentsOutput; // testing
-    document.getElementById('geometry').innerHTML = geometryOutput;
+    //document.getElementById('geometry').innerHTML = geometryOutput;
     state = getState(response.data.results[0].address_components);
     document.getElementById("state-name").innerHTML = state[1] + ":"
     document.getElementById("covid-stats").style.visibility = 'visible';
@@ -81,4 +81,3 @@ function getState(address_components){
 
   }
 }
-

@@ -41,19 +41,19 @@ function initMap(){
         map:map,
         //icon:props.iconImage
       });
-  
+
       // Check for customicon
       if(props.iconImage){
         // Set icon image
         marker.setIcon(props.iconImage);
       }
-  
+
       // Check content
       if(props.content){
         var infoWindow = new google.maps.InfoWindow({
           content:props.content
         });
-  
+
         marker.addListener('click', function(){
           infoWindow.open(map, marker);
         });
@@ -70,14 +70,14 @@ function loadPlace(lat, long, VaccineLocations){
       center:{lat:lat,lng:long}
     }
   var map = new google.maps.Map(document.getElementById('map'), options);
-  
+
   //call function addLocations for each location passed into the function
   for(var i = 0; i < VaccineLocations.length; i++){
     addLocations(VaccineLocations[i])
   }
 
   var map = new google.maps.Map(document.getElementById('map'), options);
-  
+
   //call function addLocations for each location passed into the function
   for(var i = 0; i < VaccineLocations.length; i++){
     addLocations(VaccineLocations[i])
@@ -91,7 +91,7 @@ function loadPlace(lat, long, VaccineLocations){
       coords:{lat:results.geometry.coordinates[1],lng:results.geometry.coordinates[0]},
       content:'<p>' + results.properties.address + '</p><p>' + results.properties.provider + '</p>'
     }
-    
+
     // create the marker
     var marker = new google.maps.Marker({
       position:marker_info.coords,
@@ -108,7 +108,6 @@ function loadPlace(lat, long, VaccineLocations){
        infoWindow.open(map, marker);
     });
 
-  
+
   }
 }
-
