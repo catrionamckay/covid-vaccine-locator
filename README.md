@@ -1,4 +1,4 @@
-# covid-vaccine-locator
+# Covid Vaccine Locator
 A webpage for finding places to get the covid-19 vaccine.
 **only functional with US locations**
 
